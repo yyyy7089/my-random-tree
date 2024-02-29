@@ -1,12 +1,12 @@
 let modInfo = {
 	name: "My Random Tree",
 	id: "j",
-	author: "yyyy7089",
+	author: "yyyy7089 (special thanks to op_Dare)",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
 	discordName: "discord server",
-	discordLink: "",
+	discordLink: "https://discord.gg/fYqrcBCQ6y",
 	initialStartPoints: new Decimal (10), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
 }
@@ -19,6 +19,11 @@ let VERSION = {
 
 let changelog =
 `<h1>Changelog:</h1><br>
+<h2>v0.1.1</h2><br>
+2 new layers<br>
+added discord server link<br>
+endgame: pickaxe tier 8 (didn't push farther, didn't do balance/bugtest)
+<br><br><br>
 <h3>v0.1</h3><br>
 2 layers<br>
 endgame: pickaxe tier 8`
