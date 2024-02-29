@@ -46,8 +46,9 @@ function getPointGen() {
 	let gain = new Decimal(1)
 
 	for(i=11;i<16;++i){
-		if (hasUpgrade('p', i)) gain = gain.add(new Decimal(1))
+		if(hasUpgrade('p', i)) gain = gain.add(new Decimal(1))
 	}
+	gain = gain.add(buyableEffect('u', 22))
 	
 	if(hasUpgrade('p', 31)) gain = gain.times(upgradeEffect('p', 31))
 	if(hasUpgrade('p', 32)) gain = gain.times(upgradeEffect('p', 32))
@@ -55,6 +56,12 @@ function getPointGen() {
 	gain = gain.times(buyableEffect('p', 11))
 
 	gain = gain.times(buyableEffect('m', 101))
+	
+	if(getBuyableAmount('u', 13).gte(1)) gain = gain.times(3)
+
+	if(hasUpgrade('d', 21)) gain = gain.times(2)
+
+	gain = gain.times(buyableEffect('d', 11))
 
 	return gain
 }

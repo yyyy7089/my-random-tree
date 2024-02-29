@@ -4,6 +4,38 @@ This is a relatively minimal layer with few features. Most things will require a
 
 ```js
 addLayer("p", {
+    startData() { return {
+        unlocked: true,
+        points: new Decimal(0),
+    }},
+
+    color: "#4BDC13",
+    resource: "prestige points",
+    row: 0,
+
+    baseResource: "points",
+    baseAmount() { return player.points },
+
+    requires: new Decimal(10),
+
+    type: "normal",
+    exponent: 0.5,
+
+    gainMult() {
+        return new Decimal(1)
+    },
+    gainExp() {
+        return new Decimal(1)
+    },
+
+    layerShown() { return true },
+
+    upgrades: {
+        
+    },
+})
+
+addLayer("p", {
     startData() { return {                  // startData is a function that returns default data for a layer. 
         unlocked: true,                     // You can add more variables here to add them to your layer.
         points: new Decimal(0),             // "points" is the internal name for the main resource of the layer.
